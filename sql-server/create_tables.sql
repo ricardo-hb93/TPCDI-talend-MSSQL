@@ -95,7 +95,7 @@ create table DimAccount (
 
 create table DimDate (
 	SK_DateID int NOT NULL PRIMARY KEY,
-	DateValue DATE NOT NULL,
+	DateValue date NOT NULL,
 	DateDesc char(20) NOT NULL,
 	CalendarYearID numeric(4) NOT NULL,
 	CalendarYearDesc char(20) NOT NULL,
