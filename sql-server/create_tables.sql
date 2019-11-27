@@ -105,7 +105,7 @@ create table DimDate (
 	CalendarMonthDesc char(20) NOT NULL,
 	CalendarWeekID numeric(6) NOT NULL,
 	CalendarWeekDesc char(20) NOT NULL,
-	DayOfWeeknumeric numeric(1) NOT NULL,
+	DayOfWeekNum numeric(1) NOT NULL,
 	DayOfWeekDesc char(10) NOT NULL,
 	FiscalYearID numeric(4) NOT NULL,
 	FiscalYearDesc char(20) NOT NULL,
