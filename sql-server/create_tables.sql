@@ -172,13 +172,13 @@ create table DimTrade (
 	CONSTRAINT FK_DimTrade_BrokerID FOREIGN KEY (SK_BrokerID)
 		REFERENCES DimBroker(SK_BrokerID),
 	CONSTRAINT FK_DimTrade_CreateDateID FOREIGN KEY (SK_CreateDateID)
-		REFERENCES DimDate(SK_CreateDateID),
+		REFERENCES DimDate(SK_DateID),
 	CONSTRAINT FK_DimTrade_CreateTimeID FOREIGN KEY (SK_CreateTimeID)
-		REFERENCES DimTime(SK_CreateTimeID),
+		REFERENCES DimTime(SK_TimeID),
 	CONSTRAINT FK_DimTrade_CloseDateID FOREIGN KEY (SK_CloseDateID)
-		REFERENCES DimDate(SK_CloseDateID),
+		REFERENCES DimDate(SK_DateID),
 	CONSTRAINT FK_DimTrade_CloseTimeID FOREIGN KEY (SK_CloseTimeID)
-		REFERENCES DimTime(SK_CloseTimeID),
+		REFERENCES DimTime(SK_TimeID),
 	CONSTRAINT FK_DimTrade_SecurityID FOREIGN KEY (SK_SecurityID)
 		REFERENCES DimSecurity(SK_SecurityID),
 	CONSTRAINT FK_DimTrade_CompanyID FOREIGN KEY (SK_CompanyID)
@@ -276,7 +276,7 @@ create table FactWatches (
 	CONSTRAINT FK_FactWatches_DatePlaced FOREIGN KEY (SK_DateID_DatePlaced)
 		REFERENCES DimDate(SK_DateID),
 	CONSTRAINT FK_FactWatches_DateRemoved FOREIGN KEY (SK_DateID_DateRemoved)
-		REFERENCES DimDate(SK_DateID_DateRemoved)
+		REFERENCES DimDate(SK_DateID)
 );
 
 create table Industry (
@@ -333,7 +333,7 @@ create table Prospect (
 	NetWorth numeric(12),
 	MarketingNameplate char(100),
 	CONSTRAINT FK_Prospect_UpdateDateID FOREIGN KEY (SK_UpdateDateID)
-		REFERENCES DimDate(SK_UpdateDateID)
+		REFERENCES DimDate(SK_DateID)
 );
 
 create table StatusType (
