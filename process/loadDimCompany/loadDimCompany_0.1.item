@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="staging_area_dir" prompt="staging_area_dir?" promptNeeded="false" type="id_String" value="C:/Users/SrSut/Documents/bb39adbd-6449-444f-b69b-a5665e06772c-tpc-di-tool/Tools/PDGF/output/Batch1/"/>
+    <contextParameter comment="" name="staging_area_dir" prompt="staging_area_dir?" promptNeeded="false" type="id_String" value="C:\Users\SrSut\Downloads\produced_dataset\produced_dataset\Batch1"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="4" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
@@ -813,11 +813,11 @@
       <column comment="" key="false" length="10" name="EffectiveDate" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="var1" expression="1" type="id_Integer"/>
         <mapperTableEntries name="var2" expression="true" type="id_Boolean"/>
-        <mapperTableEntries name="var3" expression="row6.PTS " type="id_Date"/>
+        <mapperTableEntries name="var3" expression="row11.PTS " type="id_Date"/>
         <mapperTableEntries name="var4" expression="TalendDate.parseDate(&quot;yyyy-MM-dd HH:mm:ss&quot;,&quot;9999-12-31 23:59:59&quot;) " type="id_Date"/>
         <mapperTableEntries name="var5" expression="!(row11.SPrating.startsWith(&quot;A&quot;) || row11.SPrating.startsWith(&quot;BBB&quot;)) " type="id_Boolean"/>
       </varTables>
@@ -1124,9 +1124,7 @@
     <elementParameter field="CHECK" name="USE_SAVE_MEM_MODE" value="false"/>
     <elementParameter field="CHECK" name="SOURCE_KEY_INC_NULL" value="false"/>
     <elementParameter field="CHECK" name="USE_L0" value="false" show="false"/>
-    <elementParameter field="TABLE" name="L0_FIELDS" show="false"/>
     <elementParameter field="CHECK" name="USE_L1" value="false" show="false"/>
-    <elementParameter field="TABLE" name="L1_FIELDS" show="false"/>
     <elementParameter field="CHECK" name="ONLY_UPDATE_ACTIVE" value="false" show="false"/>
     <elementParameter field="CHECK" name="USE_L2" value="true" show="false"/>
     <elementParameter field="TABLE" name="L2_FIELDS" show="false">
