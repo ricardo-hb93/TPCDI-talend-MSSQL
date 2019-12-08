@@ -74,7 +74,7 @@ create table DimCustomer (
 );
 
 create table DimAccount (
-	SK_AccountID int NOT NULL PRIMARY KEY,
+	SK_AccountID int PRIMARY KEY NOT NULL IDENTITY(1, 1),
 	AccountID int NOT NULL,
 	SK_BrokerID int NOT NULL,
 	SK_CustomerID int NOT NULL,
