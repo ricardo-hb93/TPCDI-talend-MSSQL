@@ -125,7 +125,7 @@ create table DimSecurity (
 	SharesOutstanding int NOT NULL,
 	FirstTrade DATE NOT NULL,
 	FirstTradeOnExchange DATE NOT NULL,
-	Dividend int NOT NULL,
+	Dividend numeric(10,2) NOT NULL,
 	IsCurrent bit NOT NULL,
 	BatchID numeric(5) NOT NULL,
 	EffectiveDate DATE NOT NULL,
