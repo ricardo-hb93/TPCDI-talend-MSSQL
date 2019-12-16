@@ -129,7 +129,7 @@
   </node>
   <node componentName="tFileInputFullRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputFullRow_1" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="((String)globalMap.get(&quot;tFileList_1_CURRENT_FILEPATH&quot;))"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Users/SrSut/Documents/bb39adbd-6449-444f-b69b-a5665e06772c-tpc-di-tool/Tools/PDGF/output/test.txt&quot;"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
     <elementParameter field="TEXT" name="HEADER" value=""/>
     <elementParameter field="TEXT" name="FOOTER" value=""/>
@@ -295,13 +295,13 @@
       <column comment="" key="false" length="10" name="EffectiveDate" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="EffectiveDate" expression="row4.PTS " type="id_Date"/>
         <mapperTableEntries name="BatchID" expression="1" type="id_Integer"/>
         <mapperTableEntries name="IsCurrent" expression="true" type="id_Boolean"/>
       </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="DimSecurityCompanyName">
+      <outputTables sizeState="INTERMEDIATE" name="DimSecurityCompanyName" expressionFilter="(TalendDate.compareDate(row6.EffectiveDate, row4.PTS) &lt; 0) &amp;&amp; (TalendDate.compareDate(row4.PTS, row6.EndDate) &lt; 0)" activateExpressionFilter="true">
         <mapperTableEntries name="SK_SecurityID" expression="Numeric.sequence(&quot;SK_SecurityID&quot;,1,1)" type="id_Integer"/>
         <mapperTableEntries name="Symbol" expression="row4.Symbol " type="id_String"/>
         <mapperTableEntries name="Issue" expression="row4.Issue " type="id_String"/>
@@ -331,7 +331,7 @@
         <mapperTableEntries name="Dividend" type="id_String"/>
         <mapperTableEntries name="CoNameOrCIK" type="id_String"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row6" expressionFilter="row4.CoNameOrCIK.equals( row6.Name.trim()) &amp;&amp; (TalendDate.compareDate(row4.PTS, row6.EffectiveDate) != -1 &amp;&amp;  TalendDate.compareDate(row4.PTS,row6.EndDate)  == -1)" activateExpressionFilter="true" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE" innerJoin="true">
+      <inputTables sizeState="INTERMEDIATE" name="row6" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="SK_CompanyID" type="id_Integer"/>
         <mapperTableEntries name="CompanyID" type="id_Integer"/>
         <mapperTableEntries name="Status" type="id_String"/>
@@ -625,13 +625,13 @@
       <column comment="" key="false" length="10" name="EffectiveDate" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="EffectiveDate" expression="row5.PTS " type="id_Date"/>
         <mapperTableEntries name="BatchID" expression="1" type="id_Integer"/>
         <mapperTableEntries name="IsCurrent" expression="true" type="id_Boolean"/>
       </varTables>
-      <outputTables sizeState="INTERMEDIATE" name="DimSecurityCIK" expressionFilter="(TalendDate.compareDate(row8.EffectiveDate, row5.PTS) >= 0) &amp;&amp; (TalendDate.compareDate(row5.PTS, row8.EndDate) &lt; 0)" activateExpressionFilter="true">
+      <outputTables sizeState="INTERMEDIATE" name="DimSecurityCIK" expressionFilter="(TalendDate.compareDate(row8.EffectiveDate, row5.PTS) &lt; 0) &amp;&amp; (TalendDate.compareDate(row5.PTS, row8.EndDate) &lt; 0)" activateExpressionFilter="true">
         <mapperTableEntries name="SK_SecurityID" expression="Numeric.sequence(&quot;SK_SecurityID&quot;,1,1) " type="id_Integer"/>
         <mapperTableEntries name="Symbol" expression="row5.Symbol " type="id_String"/>
         <mapperTableEntries name="Issue" expression="row5.Issue " type="id_String"/>
@@ -662,7 +662,7 @@
         <mapperTableEntries name="CoNameOrCIK" type="id_String"/>
         <mapperTableEntries name="errorMessage" type="id_String" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row8" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE" innerJoin="true">
+      <inputTables sizeState="INTERMEDIATE" name="row8" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="SK_CompanyID" type="id_Integer"/>
         <mapperTableEntries name="CompanyID" expression="Integer.parseInt(row5.CoNameOrCIK)" type="id_Integer" operator="="/>
         <mapperTableEntries name="Status" type="id_String"/>
